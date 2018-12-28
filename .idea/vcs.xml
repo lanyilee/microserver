@@ -18,6 +18,7 @@
     <mapping directory="$PROJECT_DIR$/src/github.com/micro/cli" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/micro/go-log" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/micro/go-micro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/micro/go-plugins" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/micro/go-rcache" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/micro/h2c" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/micro/mdns" vcs="Git" />
