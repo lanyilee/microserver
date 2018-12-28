@@ -1,13 +1,13 @@
-package user_server
+package main
 
 import (
-	"../github.com/micro/go-micro"
-	pb "./proto/user"
 	"context"
+	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/errors"
 	_ "github.com/micro/go-plugins/broker/nats"
 	"golang.org/x/crypto/bcrypt"
 	"log"
+	pb "user-server/src/proto/user"
 )
 
 const topic = "user.created"
@@ -65,5 +65,25 @@ func (h *handler) ValidateToken(ctx context.Context, req *pb.Token, resp *pb.Tok
 		return errors.New("1", "invalid user", 101)
 	}
 	resp.Valid = true
+	return nil
+}
+
+func (h *handler) Get(ctx context.Context, req *pb.User, resp *pb.Response) error {
+	user, err := h.Repo.Get(req.Id)
+	if err != nil {
+		log.Panic(err)
+		return err
+	}
+	resp.User = user
+	return nil
+}
+
+func (h *handler) GetAll(ctx context.Context, req *pb.Request, resp *pb.Response) error {
+	users, err := h.Repo.GetAll()
+	if err != nil {
+		log.Panic(err)
+		return err
+	}
+	resp.Users = users
 	return nil
 }

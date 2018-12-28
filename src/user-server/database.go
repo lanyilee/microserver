@@ -1,4 +1,4 @@
-package user_server
+package main
 
 import (
 	"database/sql"

@@ -1,9 +1,9 @@
-package user_server
+package main
 
 import (
-	pb "./proto/user"
 	"database/sql"
 	"log"
+	pb "user-server/src/proto/user"
 )
 
 type Repository interface {
